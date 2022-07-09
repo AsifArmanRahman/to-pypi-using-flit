@@ -1,0 +1,43 @@
+name: 'To PyPI using FLIT'
+author: '@AsifArmanRahman'
+description: 'An action to build and publish Python 🐍 package to PyPI using Flit.'
+
+branding:
+    icon: upload-cloud
+    color: purple
+
+inputs:
+    user-name:
+        default: '__token__'
+        description: "PyPI/TestPyPI Username. If no input is given, default value is '__token__'."
+        required: false
+
+    password:
+        description: "PyPI/TestPyPI Password. If 𝘶𝘴𝘦𝘳-𝘯𝘢𝘮𝘦 is not sent, this field also acts as receiver of the API Token of PyPI/TestPyPI."
+        required: true
+
+    repository-url:
+        default: 'https://upload.pypi.org/legacy/'
+        description: 'The package uploads to PyPI by default, unless different site url value is set.'
+        required: false
+
+runs:
+    using: 'composite'
+
+    steps:
+        -   run: |
+                pip install flit
+            shell: bash
+
+        -   run: |
+                flit build
+            shell: bash
+
+        -   run: |
+                flit publish
+            shell: bash
+
+            env:
+                FLIT_USERNAME: ${{ inputs.pypi-user-name }}
+                FLIT_PASSWORD: ${{ inputs.pypi-password }}
+                FLIT_INDEX_URL: ${{ inputs.repository-url }}
