@@ -1,6 +1,6 @@
-name: 'To PyPI using FLIT'
+name: 'To PyPI using Flit'
 author: '@AsifArmanRahman'
-description: 'An action to build and publish Python 🐍 package to PyPI using Flit.'
+description: 'An action to build and publish Python 🐍 packages to PyPI using Flit.'
 
 branding:
     icon: upload-cloud

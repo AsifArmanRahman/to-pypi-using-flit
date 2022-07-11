@@ -1,5 +1,5 @@
 # to-pypi-using-flit
- An action to build and publish Python 🐍 package to PyPI using Flit.
+ An action to build and publish Python 🐍 packages to PyPI using Flit.
 
 ## Usage
 
@@ -44,8 +44,8 @@ jobs:
                     python-version: 3.9
                     cache: pip
 
-            -   name: Publish to PyPI
-                uses: asifarmanrahman/to-pypi-using-flit@v1
+            -   name: To PyPI using Flit
+                uses: AsifArmanRahman/to-pypi-using-flit@v1
                 with:
                     password: ${{ secrets.PYPI_API_TOKEN }}
 
@@ -61,10 +61,10 @@ jobs:
 ### To use with PyPI API token
 
 ```yaml
-- name: Publish package to PyPI using API TOKEN
-  use: asifarmanrahman/to-pypi-using-flit@v1
-  with:
-     password: ${{ secrets.PYPI_API_TOKEN }}
+-   name: To PyPI using Flit
+    uses: AsifArmanRahman/to-pypi-using-flit@v1
+    with:
+        password: ${{ secrets.PYPI_API_TOKEN }}
 ```
 
 <br>
@@ -72,11 +72,11 @@ jobs:
 ### To use with PyPI Username and Password
 
 ```yaml
-- name: Publish package to PyPI using Username and Password
-  use: asifarmanrahman/to-pypi-using-flit@v1
-  with:
-     user-name: ${{ secrets.PYPI_USERNAME }}
-     password: ${{ secrets.PYPI_PASSWORD }}
+-   name: To PyPI using Flit
+    uses: AsifArmanRahman/to-pypi-using-flit@v1
+    with:
+        user-name: ${{ secrets.PYPI_USERNAME }}
+        password: ${{ secrets.PYPI_PASSWORD }}
 ```
 
 <br>
@@ -84,11 +84,11 @@ jobs:
 ### To use with TestPyPI API token
 
 ```yaml
-- name: Publish package to TestPyPI using API TOKEN
-  use: asifarmanrahman/to-pypi-using-flit@v1
-  with:
-     password: ${{ secrets.TESTPYPI_API_TOKEN }}
-     repository-url: https://test.pypi.org/legacy/
+-   name: To PyPI using Flit
+    uses: AsifArmanRahman/to-pypi-using-flit@v1
+    with:
+        password: ${{ secrets.TESTPYPI_API_TOKEN }}
+        repository-url: https://test.pypi.org/legacy/
 ```
 
 <br>
@@ -96,12 +96,12 @@ jobs:
 ### To use with TestPyPI Username and Password
 
 ```yaml
-- name: Publish package to TestPyPI using Username and Password
-  use: asifarmanrahman/to-pypi-using-flit@v1
-  with:
-     user-name: ${{ secrets.TESTPYPI_USERNAME }}
-     password: ${{ secrets.TESTPYPI_PASSWORD }}
-     repository-url: https://test.pypi.org/legacy/
+-   name: To PyPI using Flit
+    uses: AsifArmanRahman/to-pypi-using-flit@v1
+    with:
+        user-name: ${{ secrets.TESTPYPI_USERNAME }}
+        password: ${{ secrets.TESTPYPI_PASSWORD }}
+        repository-url: https://test.pypi.org/legacy/
 ```
 
 ---
@@ -112,7 +112,7 @@ jobs:
 |:----------------:|:--------------------------------:|:-------------------------------:|:--------:|
 |   `user-name`    |      PyPI/TestPyPI Username      |           `__token__`           |  False   | 
 |    `password`    | PyPI/TestPyPI Password/API TOKEN |              null               |   True   |
-| `repository-url` |       PyPI Repository URL        | https://upload.pypi.org/legacy/ |  False   |
+| `repository-url` |          Repository URL          | https://upload.pypi.org/legacy/ |  False   |
 
 ---
 
