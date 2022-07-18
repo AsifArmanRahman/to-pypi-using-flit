@@ -38,6 +38,6 @@ runs:
             shell: bash
 
             env:
-                FLIT_USERNAME: ${{ inputs.pypi-user-name }}
-                FLIT_PASSWORD: ${{ inputs.pypi-password }}
+                FLIT_USERNAME: ${{ inputs.user-name }}
+                FLIT_PASSWORD: ${{ inputs.password }}
                 FLIT_INDEX_URL: ${{ inputs.repository-url }}
